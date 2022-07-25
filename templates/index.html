@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <h1 style="text-align: center">Sistema de cadastro de produtos</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/add">Adicionar produto</a>
+            </div>
+            <div class="col-cs-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Quant.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for s in sistema %}
+                        <tr>
+                            <td>{{s.nome}}</td>
+                            <td>{{s.categoria}}</td>
+                            <td>{{s.quantidade}}</td>
+                            <td>
+                                <a href="edit/{{s.cod}}">Editar</a> |
+                                <a href="delete/{{s.cod}}">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
